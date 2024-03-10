@@ -21,3 +21,8 @@ class Solution:
             p -= 1
 
         nums1[:p2 + 1] = nums2[:p2 + 1]
+        
+#problem 27 - Remove Element
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        nums[:] = [x for x in nums if x != val]
