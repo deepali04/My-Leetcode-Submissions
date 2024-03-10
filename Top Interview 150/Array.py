@@ -23,6 +23,15 @@ class Solution:
         nums1[:p2 + 1] = nums2[:p2 + 1]
         
 #problem 27 - Remove Element
-class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         nums[:] = [x for x in nums if x != val]
+
+
+# problem 26 - Remove duplicates form sorted array
+    def removeDuplicates(self, nums: List[int]) -> int:
+        nums[:] = sorted(set(nums))
+        print(nums)
+        return len(nums)
+    
+
+# problem 80 - Remove duplicates form sorted array-II
