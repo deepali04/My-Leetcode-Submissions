@@ -48,7 +48,7 @@ class Solution:
                     index += 1
                 print(nums)
             return index
-
+# problem 443 - String Compression
     def compress(self, chars: List[str]) -> int:
         if not chars:
             return 0
