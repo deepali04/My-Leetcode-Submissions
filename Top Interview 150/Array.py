@@ -48,3 +48,23 @@ class Solution:
                     index += 1
                 print(nums)
             return index
+
+    def compress(self, chars: List[str]) -> int:
+        if not chars:
+            return 0
+        first = chars[0]
+        count, length  = 0, len(chars)
+        chars.append(" ") 
+        for i in range(length+1): 
+            char = chars.pop(0)
+            if char == first: 
+                count += 1
+            else:
+                if count == 1: 
+                    chars.append(first) 
+                elif count > 1:
+                    chars.append(first)
+                    chars += (list(str(count))) 
+                first = char 
+                count = 1 
+        return len(chars)
