@@ -1,0 +1,20 @@
+
+
+// This dfs algorithm has two steps.
+
+// 1. Base Condition :  check the row, column boundary(i > total row or j> total column etc.)
+// 2. Check in all 4 adjacent neighbors: top(row-1,col), down(row+1,col), left(row,col-1), right(row,col+1).
+
+
+public void dfs(char[][] grid, int i, int c){
+    // base condition. Here, total row=grid.length, total column= grid[0].length
+    if(i<0 || i>=grid.length || j<0 || j>=grid[0].length || grid[i][j]!='1')
+        return;
+    // make the cell visited
+    grid[i][j]='X';
+    // Check in four adjacent neighbors
+    dfs(grid, i-1, j);// check in upper side
+    dfs(grid, i+1, j);//check in bottm side
+    dfs(grid, i, j-1);//check in left side
+    dfs(grid, i, j+1);//check in right side
+}
